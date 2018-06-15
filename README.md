@@ -1,8 +1,8 @@
-# FRONT END WEB PROJECT MANAGER
-###### A simple bash shell script to make things easier in the front end developer's life.
+# SUPERMARKET COMMUNICATORY
+###### A simple javascript code for supermarket prices sign printer.
 
 ## About this project
-This script initialize and creates all project directories and verifys if all dependencies are installed to develop any web front end project.  
+coming soon.  
 
 ## Geting Started
 coming soon
@@ -17,33 +17,19 @@ coming soon
 ## How to use
 In first step, enter the directory:
 ```
-$ cd FrontEnd-WebProject-Manager/
+$ cd Supermarket-Communicatory/
 ```
 Continuing then
 
 ```
 $ sudo chmod +x init.sh compile_sass.sh compile_pug.sh
-$ ./init.sh <project_name> <project_path>
-```
-
-Where the project_name is your project name rs.
-The project directory will be created in:
-
-```
-$ <project_path>/project_name
-```
-Where project path is your main directory.
-For access the project:
-
-```
-$ cd <project_path>/project_name
 ```
 
 ## Execute the SASS and PUG compiler
 In project directory
 
 ```
-<project_path>/project_name
+Supermarket-Communicatory/
 ```
 
 execute the following bash scripts:

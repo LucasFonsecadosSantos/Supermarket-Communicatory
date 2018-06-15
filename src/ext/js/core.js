@@ -2,6 +2,7 @@ function addProduct() {
     var name = document.getElementById("productName").value;
     var unit = document.getElementById("productUnit").value;
     var price = document.getElementById("productPrice").value;
+    var isOferta = document.getElementById("isOferta").value;
     if (name == ""){
         alert("Ops: Voce se esqueceu de preencher o campo nome.\n Por favor, refaça a operação preenchendo corretamente o campo nome.\n\n Exemplo: Coca-Cola");
     } else if (unit == ""){
@@ -53,58 +54,215 @@ function execPrint() {
                 products[i][j] = cell[j].firstChild.innerHTML;
             }
         }
-        for (i=0 ; i<tableSize ; i++) {
-            for (j=1 ; j<cellSize-1 ; j++) {
-                console.log(products[i][j]);
-            }
+        alert(tableSize);
+        for (i=0 ; i < tableSize ; i++) {
+            printCreation(layoutSetting, products);
         }
-        printCreation(layoutSetting, products[0][1], products[0][2], products[0][3]);
     }
 }
 
-function printCreation(layoutSetting, name, unit, price) {
-    var page = window.open("","_blank");
-    page.document.write(
-        "<html>"+
-            "<head>"+
-                "<style>"+
-                    "h2, h1, h3 {"+
-                        "margin:0px;"+
-                        "padding:0px;"+
-                    "}"+
-                    "span {"+
-                        "font-size:60px;"+
-                    "}"+
-                    "h2 {"+
-                        "margin-top:30%;"+
-                        "font-size:90px;"+
-                    "}"+
-                    "h3 {"+
-                        "font-size:50px;"+
-                        "margin-top:5%;"+
-                        "margin-bottom:20%;"+
-                    "}"+
-                    "h1 {"+
-                        "font-size:110px;"+
-                        "color:#F00;"+
-                    "}"+
-                    "body {"+
-                        "width: 21cm;"+
-                        "height: 29.7cm; "+
-                    "}"+
-                    "@media print {"+
-                        "body {"+
-                        "}"+
-                    "}"+
-                "</style>"+
-            "</head>"+
-            "<body>"+
-                "<center>"+
-                    "<h2>"+name+"</h1>"+
-                    "<h3>"+unit+"</h1>"+
-                    "<h1><span>R$</span> "+price+"</h1>"+
-                "</center>"+
-            "</body>"+
-        "</html>"
-    );
+function printCreation(layoutSetting, products) {
+    switch (layoutSetting) {
+        case "price_a4_portrait":
+            var productsStr = "";
+            for (i=0;i<products.length;i++) {
+                productsStr += "<div class=\"page\">"+
+                    "<center>"+
+                        "<h4><b>OFERTA</b></h4>"+
+                        "<h2>"+products[i][1]+"</h1>"+
+                        "<h3>"+products[i][2]+"</h1>"+
+                        "<h1>"+products[i][3]+"</h1>"+
+                    "</center>"+
+                "</div>";
+            }
+            var page = window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=600px,height=400px");            ;
+            page.document.write(
+                "<html>"+
+                    "<head>"+
+                        "<style>"+
+                            "h2, h1, h3 {"+
+                                "margin:0px;"+
+                                "padding:0px;"+
+                            "}"+
+                            "span {"+
+                                "font-size:60px;"+
+                                "position: absolute;"+
+                                "left: 20%;"+
+                                "margin-bottom: 5%;"+
+                            "}"+
+                            "h2 {"+
+                                "margin-top:-9%;"+
+                                "font-size:90px;"+
+                                "min-height:324px !important;"+
+                                "max-height:324px !important;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h4 {"+
+                                "font-size:100px;"+
+                                "padding-left: 30%"+
+                                "padding-right: 30%"+
+                            "}"+
+                            "h4:first-letter {"+
+                                "text-transform: uppercase;"+
+                            "}"+
+                            "h4:after {"+
+                                "content:\"◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "h4:before {"+
+                                "content:\"◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "b {"+
+                                "margin: 0px 1cm 0px 1cm;"+
+                            "}"+
+                            "h3 {"+
+                                "font-size:50px;"+
+                                "margin-top:2.5%;"+
+                                "margin-bottom:20%;"+
+                                "max-height:60px;"+
+                                "min-height:60px;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h1 {"+
+                                "overflow: hidden;"+
+                                "font-size:230px;"+
+                                "display:inline-block;"+
+                                "transform:scale(1,1.4); /* W3C */"+
+                                "-webkit-transform:scale(1,1.4); /* Safari and Chrome */"+
+                                "-moz-transform:scale(1,1.4); /* Firefox */"+
+                                "-ms-transform:scale(1,1.4); /* IE 9 */"+
+                                "-o-transform:scale(1,1.4); /* Opera */"+
+                                "color:#F00;"+
+                            "}"+
+                            "h1:before {"+
+                                "content: \" R$\";"+
+                                "font-size: 60px;"+
+                            "}"+
+                            "body {"+
+                                "width: 21cm;"+
+                            "}"+
+                            ".page {"+
+                                "height: 29.7cm; "+
+                            "}"+
+                            "@media print {"+
+                                "body {"+
+                                "}"+
+                            "}"+
+                        "</style>"+
+                    "</head>"+
+                    "<body>"+
+                        productsStr+
+                    "</body>"+
+                "</html>"
+            );
+            break;
+        case "price_a4_landscape":
+            var productsStr = "";
+            for (i=0;i<products.length;i++) {
+                productsStr += "<div class=\"page\">"+
+                    "<center>"+
+                        "<h4><b>OFERTA</b></h4>"+
+                        "<h2>"+products[i][1]+"</h1>"+
+                        "<h3>"+products[i][2]+"</h1>"+
+                        "<h1>"+products[i][3]+"</h1>"+
+                    "</center>"+
+                "</div>";
+            }
+            var page = window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=600px,height=400px");            ;
+            page.document.write(
+                "<html>"+
+                    "<head>"+
+                        "<style>"+
+                            "h2, h1, h3 {"+
+                                "margin:0px;"+
+                                "padding:0px;"+
+                            "}"+
+                            "span {"+
+                                "font-size:60px;"+
+                                "position: absolute;"+
+                                "left: 20%;"+
+                                "margin-bottom: 5%;"+
+                            "}"+
+                            "h2 {"+
+                                "margin-top:-9%;"+
+                                "font-size:90px;"+
+                                "min-height:324px !important;"+
+                                "max-height:324px !important;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h4 {"+
+                                "font-size:100px;"+
+                                "padding-left: 30%"+
+                                "padding-right: 30%"+
+                            "}"+
+                            "h4:first-letter {"+
+                                "text-transform: uppercase;"+
+                            "}"+
+                            "h4:after {"+
+                                "content:\"◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "h4:before {"+
+                                "content:\"◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "b {"+
+                                "margin: 0px 1cm 0px 1cm;"+
+                            "}"+
+                            "h3 {"+
+                                "font-size:50px;"+
+                                "margin-top:2.5%;"+
+                                "margin-bottom:20%;"+
+                                "max-height:60px;"+
+                                "min-height:60px;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h1 {"+
+                                "overflow: hidden;"+
+                                "font-size:230px;"+
+                                "display:inline-block;"+
+                                "transform:scale(1,1.4); /* W3C */"+
+                                "-webkit-transform:scale(1,1.4); /* Safari and Chrome */"+
+                                "-moz-transform:scale(1,1.4); /* Firefox */"+
+                                "-ms-transform:scale(1,1.4); /* IE 9 */"+
+                                "-o-transform:scale(1,1.4); /* Opera */"+
+                                "color:#F00;"+
+                            "}"+
+                            "h1:before {"+
+                                "content: \" R$\";"+
+                                "font-size: 60px;"+
+                            "}"+
+                            "body {"+
+                                "width: 29.7cm;"+
+                            "}"+
+                            ".page {"+
+                                "height: 21cm; "+
+                            "}"+
+                            "@media print {"+
+                                "body {"+
+                                "}"+
+                            "}"+
+                        "</style>"+
+                    "</head>"+
+                    "<body>"+
+                        productsStr+
+                    "</body>"+
+                "</html>"
+            );
+            break;
+    }
+    return;
+}
+
+function get_price_a4_portrait_settings() {
+    return 
 }

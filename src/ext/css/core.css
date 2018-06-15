@@ -6696,6 +6696,9 @@ input, textarea, select {
     border: solid #f00 1px; }
   input:hover, input:focus, textarea:hover, textarea:focus, select:hover, select:focus {
     background: rgba(168, 224, 99, 0.3) !important; }
+  input[type="checkbox"], textarea[type="checkbox"], select[type="checkbox"] {
+    width: auto !important;
+    margin-right: 1%; }
 
 input {
   padding: 2% 5% 2% 5% !important; }
@@ -6781,7 +6784,8 @@ main[class="indexMain"] {
     main[class="indexMain"] #index02 button {
       margin-top: 2%; }
     main[class="indexMain"] #index02 .fields {
-      margin-top: 1.5%; }
+      margin-top: 1.5%;
+      margin-bottom: 1.5%; }
   main[class="indexMain"] #index03 {
     margin-top: 3%;
     height: auto; }
