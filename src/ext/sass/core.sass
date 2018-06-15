@@ -42,10 +42,10 @@
 
 *
     font-size: 100%
-    margin:    0px auto
     padding:   0px
-
-
+body
+    height: auto
+    min-height: 100vh
 
 
 
@@ -53,6 +53,7 @@
 //---------------------------[ IMPORTS ]-----------------------------------------//
 @import "libs/bootstrap.scss"
 @import "variables.sass"
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800|Poppins:400,600')
 //-------------------------------------------------------------------------------//
 
 
@@ -117,10 +118,27 @@
 
 //----------------------------------[ FONTS ]------------------------------------//
 p
+    font:
+        family: $__FONT__text_
+        weight: 400
+        size: 1em
+    margin: 0px !important
+    padding: 0px !important
 h1
 h2
 h3
+    margin: 0px !important
+    padding: 0px !important
+    width: 100%
+    font:
+        family: $__FONT__title_
+        weight: 600
 h4
+    font:
+        family: $__FONT__title_
+        weight: 400
+    margin: 0px !important
+    padding: 0px !important
 h5
 h6
 label
@@ -154,11 +172,66 @@ a
 
 //-----------------------------------[ FORMS ]-----------------------------------//
 input, textarea, select
+    @include border_radius(7px)
+    @extend .transitions
+    width: 100%
+    background: none
+    outline: none
+    border: solid #a8e063 1px
+    padding: 1% 4% 1% 4%
+    font:
+        family: $__FONT__text_
+        size: 1em
+        weight: 400
+    cursor: pointer
+    &:invalid
+        border: solid #f00 1px
+    &:hover, &:focus
+        background: rgba(168,224,99,0.3) !important
+input
+    padding: 2% 5% 2% 5% !important
 button
+    @include border_radius(7px)
+    @extend .transitions
+    background: #a8e063
+    cursor: pointer
+    outline: none
+    border: none
+    padding: 1% 2% 1% 2%
+    font:
+        size: 1.0em
+        family: $__FONT__title_
+    color: #FFF
+    &:hover
+        background: darken(#a8e063,10) !important
 table
-    th
+    @include border_radius(7px)
+    width: 100%
+    background: #a8e063
     tr
-    td
+        border-bottom: solid 2px #FFF
+        &:last-child
+            border-bottom: none
+    thead
+        tr
+            td
+                padding: 2% 0% 2% 0%
+                text-align: center
+                h4
+                    color: #FFF
+            &:last-child
+                border-bottom: solid 2px #FFF !important
+    tbody
+        tr
+            @extend .transitions
+            background: none
+            td
+                padding: 1% 0% 1% 0%
+                text-align: center
+                background: none
+            &:hover
+                @extend .transitions
+                background: darken(#a8e063,10) !important
 //-------------------------------------------------------------------------------//
 
 
@@ -170,17 +243,76 @@ table
 
 //+++++++++++++++++++++Header++++++++++++++++++++++//
 header
+    .navbar
+        background: #56ab2f
+        background: -webkit-linear-gradient(to right, #a8e063, #56ab2f)
+        background: linear-gradient(to right, #a8e063, #56ab2f)
+
 //++++++++++++++++++End of header++++++++++++++++++//
 
 //++++++++++++++++++++++Footer+++++++++++++++++++++//
 footer
+    margin-top: 3%
+    text-align: center
+    padding: 0.5% 0% 0.5% 0%
+    background: #56ab2f
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f)
+    background: linear-gradient(to right, #a8e063, #56ab2f)
 //++++++++++++++++++End of Footer++++++++++++++++++//
 
-main
+main[class="indexMain"]
+    overflow-x: hidden
+    .title
+        margin-bottom: 1.5%
+    #settings
+            @include border_radius(7px)
+            padding: 1.5%
+            border: solid 1px #a8e063
     #index01
+        @extend .line
+        margin-top: 3%
+        height: auto
+        #documentType
+            margin-top: 1.5%
     #index02
+        @extend .line
+        margin-top: 3%
+        height: auto
+        .subIndex02
+            @include responsive_system(4,4,4,4,4)
+        button
+            margin-top: 2%
+        .fields
+            margin-top: 1.5%
     #index03
+        @extend .line
+        margin-top: 3%
+        height: auto
+        table
+            margin-top: 1.5%
+            tr
+                td:nth-child(1)
+                    width: 15%
+                td:nth-child(2)
+                    width: 25%
+                td:nth-child(3)
+                    width: 22.5%
+                td:nth-child(3)
+                    width: 22.5%
+                td:nth-child(5)
+                    width: 15%
+            img
+                cursor: pointer
+                width: 15%
+                &:first-child
+                    margin-right: 1%
+
     #index04
+        @extend .line
+        margin-top: 3%
+        height: auto
+        text-align: center
+
 //-------------------------------------------------------------------------------//
 
 
