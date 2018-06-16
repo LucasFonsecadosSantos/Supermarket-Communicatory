@@ -13,11 +13,11 @@
         h3.title Adicionar Produto
         .line.fields
             .subIndex02
-                input#productName(type="text", placeholder="Nome do Produto", alt="campo para digitar o nome do produto.", title="Insira o nome do produto aqui.")
+                input#productName(type="text", maxlength="40",placeholder="Nome do Produto", alt="campo para digitar o nome do produto.", title="Insira o nome do produto aqui.")
             .subIndex02
-                input#productUnit(type="text", placeholder="Unidade do Produto", alt="campo para digitar a unidade do produto.", title="Insira a unidade do produto aqui.")
+                input#productUnit(type="text", maxlength="15",placeholder="Unidade do Produto", alt="campo para digitar a unidade do produto.", title="Insira a unidade do produto aqui.")
             .subIndex02
-                input#productPrice(type="text", placeholder="Preço do Produto", alt="campo para digitar o preço do produto.", title="Insira o preço do produto aqui.")
+                input#productPrice(type="text",maxlength="6", placeholder="Preço do Produto", alt="campo para digitar o preço do produto.", title="Insira o preço do produto aqui.")
         
         input#isOferta(type="checkbox", checked, alt="Botão de seleção para indicar que produto está em oferta.", title="Selecione caso esse produto seja alvo de oferta.")
         label É uma oferta.
