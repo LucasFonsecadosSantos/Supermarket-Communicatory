@@ -1,5 +1,5 @@
 #index01
-    .container#settings
+    .container.settings
         h3.title Configurações
         select#documentType
             option(value="") - Escolha uma opção -
@@ -9,8 +9,8 @@
             option(value="price_a4_2x") Preço (A4 2 por folha)
             option(value="price_a4_4x") Preço (A4 4 por folha)
 #index02
-    .container#settings
-        h3.title Informações que deverão ser impressas
+    .container.settings
+        h3.title Adicionar Produto
         .line.fields
             .subIndex02
                 input#productName(type="text", placeholder="Nome do Produto", alt="campo para digitar o nome do produto.", title="Insira o nome do produto aqui.")
@@ -25,22 +25,23 @@
         button(onclick="addProduct()", alt="Botão para adicionar produto.", title="Clique aqui para adicionar um produto.") Adicionar Produto
 
 #index03
-    .container#settings
+    .container.settings
         h3.title Fila de impressão
-        table
-            thead
-                tr
-                    td
-                        h4 id
-                    td
-                        h4 nome
-                    td
-                        h4 unidade
-                    td
-                        h4 valor
-                    td
-                        h4 remover
-            tbody#productsTable
+        .table-responsive
+            table
+                thead
+                    tr
+                        td
+                            h4 id
+                        td
+                            h4 nome
+                        td
+                            h4 unidade
+                        td
+                            h4 valor
+                        td
+                            h4 remover
+                tbody#productsTable
 #index04
     .container
         button(onclick="execPrint()" alt="Botão para executar a impressão.", title="Clique aqui para começar a imprimir.") executar impressão

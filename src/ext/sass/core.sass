@@ -133,6 +133,7 @@ h3
     font:
         family: $__FONT__title_
         weight: 600
+        size: 1.3em
 h4
     font:
         family: $__FONT__title_
@@ -265,12 +266,14 @@ footer
 
 main[class="indexMain"]
     overflow-x: hidden
+    min-height: 100vh
+    height: auto
     .title
         margin-bottom: 1.5%
-    #settings
-            @include border_radius(7px)
-            padding: 1.5%
-            border: solid 1px #a8e063
+    .settings
+        @include border_radius(7px)
+        padding: 1.5%
+        border: solid 1px #a8e063
     #index01
         @extend .line
         margin-top: 3%
@@ -282,7 +285,7 @@ main[class="indexMain"]
         margin-top: 3%
         height: auto
         .subIndex02
-            @include responsive_system(4,4,4,4,4)
+            @include responsive_system(12,12,4,4,4)
         button
             margin-top: 2%
         .fields
@@ -290,6 +293,8 @@ main[class="indexMain"]
             margin-bottom: 1.5%
     #index03
         @extend .line
+        @extend .hidden-xs-down
+        @extend .hidden-sm-down
         margin-top: 3%
         height: auto
         table
@@ -324,66 +329,70 @@ main[class="indexMain"]
 
 
 //----------------------------------[ RESPONSIVE COND. ]-------------------------//
-//@media screen and (min-width: 1921px)
+@media screen and (min-width: 1921px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 1750px) and (min-width: 1550px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 1549px) and (min-width: 1350px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 1349px) and (min-width: 1200px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 1199px) and (min-width: 992px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 991px) and (min-width: 768px)
+    h4
+        font-size: 1.1em !important
+
+@media screen and (max-width: 767px) and (min-width: 550px)
+    h3
+        font-size: 1em !important
+    .settings
+        text-align: center !important
+    button
+        font-size: 0.8em !important
+    input, textarea, select
+        font-size: 0.8em !important
+        margin-top: 10% !important
+    #index02, #index01
+        .settings
+            width: 80% !important
+
+@media screen and (max-width: 549px) and (min-width: 350px)
+    h3
+        font-size: 1em !important
+    .settings
+        text-align: center !important
+    button
+        font-size: 0.8em !important
+    input, textarea, select
+        font-size: 0.8em !important
+        margin-top: 10% !important
+    #index02, #index01
+        .settings
+            width: 80% !important
+
+@media screen and (max-width: 349px)
     ///[FONTS]////////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 1750px) and (min-width: 1550px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 1549px) and (min-width: 1350px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 1349px) and (min-width: 1200px)
-    ///[FONTS]////////////////////////////////////////////////////////
-    
-    ///[HEADER]///////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 1199px) and (min-width: 992px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    ///[HEADER]///////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 991px) and (min-width: 768px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    ///[HEADER]///////////////////////////////////////////////////////
-    
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 767px) and (min-width: 550px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    ///[HEADER]///////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 549px) and (min-width: 350px)
-    ///[FONTS]////////////////////////////////////////////////////////
-
-    ///[HEADER]///////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
-//@media screen and (max-width: 349px)
-    ///[FONTS]////////////////////////////////////////////////////////
-    ///[HEADER]///////////////////////////////////////////////////////
-
-    ///[INDEX03]//////////////////////////////////////////////////////
-
-    ///[FORMS]////////////////////////////////////////////////////////
-
-    ///[FOOTER]///////////////////////////////////////////////////////
-
-    //////////////////////////////////////////////////////////////////
-
+    h3
+        font-size: 1em !important
+    .settings
+        text-align: center !important
+    button
+        font-size: 0.8em !important
+    input, textarea, select
+        font-size: 0.8em !important
+        margin-top: 10% !important
+    #index02, #index01
+        .settings
+            width: 80% !important
 //-------------------------------------------------------------------------------//
