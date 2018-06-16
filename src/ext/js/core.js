@@ -68,6 +68,11 @@ function execPrint() {
     }
 }
 
+function characterCounter(element) {
+    var value;
+    document.getElementById("charCounter").innerHTML = element.maxLength - element.value.length;
+}
+
 function printCreation(layoutSetting, products) {
     switch (layoutSetting) {
         case "price_a4_portrait":
@@ -176,10 +181,16 @@ function printCreation(layoutSetting, products) {
             break;
         case "price_a4_landscape":
             var productsStr = "";
+            var oferta = "";
             for (i=0;i<products.length;i++) {
+                if (products[i][4]) {
+                    oferta = "OFERTA";
+                } else {
+                    oferta = "◼◼◼◼";
+                }
                 productsStr += "<div class=\"page\">"+
                     "<center>"+
-                        "<h4><b>OFERTA</b></h4>"+
+                        "<h4><b>"+oferta+"</b></h4>"+
                         "<h2>"+products[i][1]+"</h1>"+
                         "<h3><i>"+products[i][2]+"</i></h1>"+
                         "<h1>"+products[i][3]+"</h1>"+
@@ -275,38 +286,26 @@ function printCreation(layoutSetting, products) {
             break;
         case "price_a4_4x":
             var productsStr = "";
-            for (i=0;i<products.length;i+=4) {
-                console.log("passou aqui");
-                productsStr += "<div class=\"page\">"+
-                    "<center>"+
-                        "<div class=\"subPage\">"+
-                            "<h4><b>OFERTA</b></h4>"+
+            var ogerta = "";
+            var limit = products.length;
+            productsStr += "<div class=\"page\"><center>";
+
+            for (i=0 ; i<limit ; ++i) {
+                
+                if (products[i][4]) {
+                    oferta = "OFERTA";
+                } else {
+                    oferta = "◼◼◼◼";
+                }
+                
+                productsStr += "<div class=\"subPage\">"+
+                            "<h4><b>"+oferta+"</b></h4>"+
                             "<h2>"+products[i][1]+"</h1>"+
                             "<h3><i>"+products[i][2]+"</i></h1>"+
                             "<h1>"+products[i][3]+"</h1>"+
-                        "</div>"+
-                        "<div class=\"subPage\">"+
-                            "<h4><b>OFERTA</b></h4>"+
-                            "<h2>"+products[i+1][1]+"</h1>"+
-                            "<h3><i>"+products[i+1][2]+"</i></h1>"+
-                            "<h1>"+products[i+1][3]+"</h1>"+
-                        "</div>"+
-                        "<div class=\"subPage\">"+
-                            "<h4><b>OFERTA</b></h4>"+
-                            "<h2>"+products[i+2][1]+"</h1>"+
-                            "<h3><i>"+products[i+2][2]+"</i></h1>"+
-                            "<h1>"+products[i+2][3]+"</h1>"+
-                        "</div>"+
-                        "<div class=\"subPage\">"+
-                            "<h4><b>OFERTA</b></h4>"+
-                            "<h2>"+products[i+3][1]+"</h1>"+
-                            "<h3><i>"+products[i+3][2]+"</i></h1>"+
-                            "<h1>"+products[i+3][3]+"</h1>"+
-                        "</div>"+
-                    "</center>"+
-                "</div>";
+                        "</div>";
             }
-            alert(productsStr);
+            productsStr += "</center></div>";
             var page = window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=600px,height=400px");
             page.document.write(
                 "<html>"+

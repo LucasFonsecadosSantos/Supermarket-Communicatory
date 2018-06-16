@@ -3,22 +3,25 @@
         h3.title Configurações
         select#documentType
             option(value="") - Escolha uma opção -
-            option(value="information") Informação
+            option(value="information") Informação [AINDA NÃO FUNCIONA]
             option(value="price_a4_portrait") Preço (A4 Retrato)
             option(value="price_a4_landscape") Preço (A4 Paisagem)
-            option(value="price_a4_2x") Preço (A4 2 por folha)
+            option(value="price_a4_2x") Preço (A4 2 por folha) [AINDA NÃO FUNCIONA]
             option(value="price_a4_4x") Preço (A4 4 por folha)
 #index02
     .container.settings
         h3.title Adicionar Produto
         .line.fields
             .subIndex02
-                input#productName(type="text", maxlength="40",placeholder="Nome do Produto", alt="campo para digitar o nome do produto.", title="Insira o nome do produto aqui.")
+                input#productName(onkeyup="characterCounter(this)", type="text", maxlength="40",placeholder="Nome do Produto", alt="campo para digitar o nome do produto.", title="Insira o nome do produto aqui.")
             .subIndex02
-                input#productUnit(type="text", maxlength="15",placeholder="Unidade do Produto", alt="campo para digitar a unidade do produto.", title="Insira a unidade do produto aqui.")
+                input#productUnit(onkeyup="characterCounter(this)", type="text", maxlength="15",placeholder="Unidade do Produto", alt="campo para digitar a unidade do produto.", title="Insira a unidade do produto aqui.")
             .subIndex02
-                input#productPrice(type="text",maxlength="6", placeholder="Preço do Produto", alt="campo para digitar o preço do produto.", title="Insira o preço do produto aqui.")
-        
+                input#productPrice(onkeyup="characterCounter(this)", type="text",maxlength="6", placeholder="Preço do Produto", alt="campo para digitar o preço do produto.", title="Insira o preço do produto aqui.")
+        p
+            | Só pode escrever mais 
+            span#charCounter
+            |  caracteres.
         input#isOferta(type="checkbox", checked, alt="Botão de seleção para indicar que produto está em oferta.", title="Selecione caso esse produto seja alvo de oferta.")
         label É uma oferta.
         br
