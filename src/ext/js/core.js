@@ -260,6 +260,149 @@ function printCreation(layoutSetting, products) {
                 "</html>"
             );
             break;
+        case "price_a4_4x":
+            var productsStr = "";
+            for (i=0;i<products.length;i+=4) {
+                console.log("passou aqui");
+                productsStr += "<div class=\"page\">"+
+                    "<center>"+
+                        "<div class=\"subPage\">"+
+                            "<h4><b>OFERTA</b></h4>"+
+                            "<h2>"+products[i][1]+"</h1>"+
+                            "<h3><i>"+products[i][2]+"</i></h1>"+
+                            "<h1>"+products[i][3]+"</h1>"+
+                        "</div>"+
+                        "<div class=\"subPage\">"+
+                            "<h4><b>OFERTA</b></h4>"+
+                            "<h2>"+products[i+1][1]+"</h1>"+
+                            "<h3><i>"+products[i+1][2]+"</i></h1>"+
+                            "<h1>"+products[i+1][3]+"</h1>"+
+                        "</div>"+
+                        "<div class=\"subPage\">"+
+                            "<h4><b>OFERTA</b></h4>"+
+                            "<h2>"+products[i+2][1]+"</h1>"+
+                            "<h3><i>"+products[i+2][2]+"</i></h1>"+
+                            "<h1>"+products[i+2][3]+"</h1>"+
+                        "</div>"+
+                        "<div class=\"subPage\">"+
+                            "<h4><b>OFERTA</b></h4>"+
+                            "<h2>"+products[i+3][1]+"</h1>"+
+                            "<h3><i>"+products[i+3][2]+"</i></h1>"+
+                            "<h1>"+products[i+3][3]+"</h1>"+
+                        "</div>"+
+                    "</center>"+
+                "</div>";
+            }
+            alert(productsStr);
+            var page = window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=no,top=500,left=500,width=600px,height=400px");
+            page.document.write(
+                "<html>"+
+                    "<head>"+
+                        "<style>"+
+                            ".page:first-child .subPage {"+
+                                "width: 14cm;"+
+                                "height: 9cm;"+
+                                "overflow: hidden;"+
+                                "float: left;"+
+                                "border: dashed 1px #afafaf;"+
+                                "text-align: center;"+
+                                "margin-top: 0px !important;"+
+                            "}"+
+                            ".subPage:nth-child(1), .subPage:nth-child(2) {"+
+                                "margin-top: 2.2cm;"+
+                            "}"+
+                            ".subPage {"+
+                                "width: 14cm;"+
+                                "height: 9cm;"+
+                                "overflow: hidden;"+
+                                "float: left;"+
+                                "border: dashed 1px #afafaf;"+
+                                "text-align: center;"+
+                            "}"+
+                            "h2, h1, h3 {"+
+                                "margin:0px;"+
+                                "padding:0px;"+
+                            "}"+
+                            "span {"+
+                                "font-size:60px;"+
+                                "position: absolute;"+
+                                "left: 20%;"+
+                                "margin-bottom: 5%;"+
+                            "}"+
+                            "h2 {"+
+                                "margin-top:-5%;"+
+                                "font-size:70px;"+
+                                "min-height:160px !important;"+
+                                "max-height:160px !important;"+
+                                "max-width: 95%;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h4 {"+
+                                "font-size:70px;"+
+                                "padding-left: 30%"+
+                                "padding-right: 30%"+
+                            "}"+
+                            "h4:first-letter {"+
+                                "text-transform: uppercase;"+
+                            "}"+
+                            "h4:after {"+
+                                "content:\"◼◼◼◼◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "h4:before {"+
+                                "content:\"◼◼◼◼◼◼\";"+
+                                "background:#000;"+
+                                
+                                "letter-spacing: -10px;"+
+                            "}"+
+                            "b {"+
+                                "margin: 0px 1cm 0px 1cm;"+
+                            "}"+
+                            "h3 {"+
+                                "font-size:50px;"+
+                                "margin-top:1.5%;"+
+                                "margin-bottom:1.5%;"+
+                                "max-height:60px;"+
+                                "min-height:60px;"+
+                                "overflow:hidden;"+
+                            "}"+
+                            "h1 {"+
+                                "overflow: hidden;"+
+                                "font-size:230px;"+
+                                "display:inline-block;"+
+                                "transform:scale(1,1.2); /* W3C */"+
+                                "-webkit-transform:scale(1,1.2); /* Safari and Chrome */"+
+                                "-moz-transform:scale(1,1.2); /* Firefox */"+
+                                "-ms-transform:scale(1,1.2); /* IE 9 */"+
+                                "-o-transform:scale(1,1.2); /* Opera */"+
+                                "color:#F00;"+
+                            "}"+
+                            "h1:before {"+
+                                "content: \" R$\";"+
+                                "font-size: 60px;"+
+                            "}"+
+                            "body {"+
+                                "width: 29.7cm;"+
+                            "}"+
+                            ".page {"+
+                                "display: inline;"+
+                                "height: 18cm; "+
+                                
+                            "}"+
+                            "@media print {"+
+                                "body {"+
+                                "}"+
+                            "}"+
+                        "</style>"+
+                    "</head>"+
+                    "<body>"+
+                        productsStr+
+                    "</body>"+
+                "</html>"
+            );
+            break;
     }
     return;
 }
