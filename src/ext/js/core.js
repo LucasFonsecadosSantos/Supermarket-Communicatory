@@ -70,7 +70,7 @@ function printCreation(layoutSetting, products) {
                     "<center>"+
                         "<h4><b>OFERTA</b></h4>"+
                         "<h2>"+products[i][1]+"</h1>"+
-                        "<h3>"+products[i][2]+"</h1>"+
+                        "<h3><i>"+products[i][2]+"</i></h1>"+
                         "<h1>"+products[i][3]+"</h1>"+
                     "</center>"+
                 "</div>";
@@ -168,7 +168,7 @@ function printCreation(layoutSetting, products) {
                     "<center>"+
                         "<h4><b>OFERTA</b></h4>"+
                         "<h2>"+products[i][1]+"</h1>"+
-                        "<h3>"+products[i][2]+"</h1>"+
+                        "<h3><i>"+products[i][2]+"</i></h1>"+
                         "<h1>"+products[i][3]+"</h1>"+
                     "</center>"+
                 "</div>";
@@ -189,14 +189,15 @@ function printCreation(layoutSetting, products) {
                                 "margin-bottom: 5%;"+
                             "}"+
                             "h2 {"+
-                                "margin-top:-9%;"+
-                                "font-size:90px;"+
-                                "min-height:324px !important;"+
-                                "max-height:324px !important;"+
+                                "margin-top:-5%;"+
+                                "font-size:70px;"+
+                                "min-height:160px !important;"+
+                                "max-height:160px !important;"+
+                                "max-width: 95%;"+
                                 "overflow:hidden;"+
                             "}"+
                             "h4 {"+
-                                "font-size:100px;"+
+                                "font-size:70px;"+
                                 "padding-left: 30%"+
                                 "padding-right: 30%"+
                             "}"+
@@ -204,13 +205,13 @@ function printCreation(layoutSetting, products) {
                                 "text-transform: uppercase;"+
                             "}"+
                             "h4:after {"+
-                                "content:\"◼◼\";"+
+                                "content:\"◼◼◼◼◼◼\";"+
                                 "background:#000;"+
                                 
                                 "letter-spacing: -10px;"+
                             "}"+
                             "h4:before {"+
-                                "content:\"◼◼\";"+
+                                "content:\"◼◼◼◼◼◼\";"+
                                 "background:#000;"+
                                 
                                 "letter-spacing: -10px;"+
@@ -220,8 +221,8 @@ function printCreation(layoutSetting, products) {
                             "}"+
                             "h3 {"+
                                 "font-size:50px;"+
-                                "margin-top:2.5%;"+
-                                "margin-bottom:20%;"+
+                                "margin-top:1.5%;"+
+                                "margin-bottom:1.5%;"+
                                 "max-height:60px;"+
                                 "min-height:60px;"+
                                 "overflow:hidden;"+
@@ -230,11 +231,11 @@ function printCreation(layoutSetting, products) {
                                 "overflow: hidden;"+
                                 "font-size:230px;"+
                                 "display:inline-block;"+
-                                "transform:scale(1,1.4); /* W3C */"+
-                                "-webkit-transform:scale(1,1.4); /* Safari and Chrome */"+
-                                "-moz-transform:scale(1,1.4); /* Firefox */"+
-                                "-ms-transform:scale(1,1.4); /* IE 9 */"+
-                                "-o-transform:scale(1,1.4); /* Opera */"+
+                                "transform:scale(1,1.2); /* W3C */"+
+                                "-webkit-transform:scale(1,1.2); /* Safari and Chrome */"+
+                                "-moz-transform:scale(1,1.2); /* Firefox */"+
+                                "-ms-transform:scale(1,1.2); /* IE 9 */"+
+                                "-o-transform:scale(1,1.2); /* Opera */"+
                                 "color:#F00;"+
                             "}"+
                             "h1:before {"+
@@ -245,7 +246,7 @@ function printCreation(layoutSetting, products) {
                                 "width: 29.7cm;"+
                             "}"+
                             ".page {"+
-                                "height: 21cm; "+
+                                "height: 18cm; "+
                             "}"+
                             "@media print {"+
                                 "body {"+
