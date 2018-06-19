@@ -61,7 +61,6 @@ function execPrint() {
             }
             products[i][4] = cell[4].firstChild.checked;
         }
-        alert(tableSize);
         for (i=0 ; i < tableSize ; i++) {
             printCreation(layoutSetting, products);
         }
@@ -78,7 +77,8 @@ function printCreation(layoutSetting, products) {
         case "price_a4_portrait":
             var productsStr = "";
             var oferta = "";
-            for (i=0;i<products.length;i++) {
+            var limit = products.length;
+            for (i=0 ; i<limit ; i++) {
                 if (products[i][4]) {
                     oferta = "OFERTA";
                 } else {
@@ -176,13 +176,15 @@ function printCreation(layoutSetting, products) {
                     "<body>"+
                         productsStr+
                     "</body>"+
+                    "<script>print();</script>"+
                 "</html>"
             );
             break;
         case "price_a4_landscape":
             var productsStr = "";
             var oferta = "";
-            for (i=0;i<products.length;i++) {
+            var limit = products.length;
+            for (i=0 ; i<limit ; i++) {
                 if (products[i][4]) {
                     oferta = "OFERTA";
                 } else {
@@ -281,6 +283,7 @@ function printCreation(layoutSetting, products) {
                     "<body>"+
                         productsStr+
                     "</body>"+
+                    "<script>print();</script>"+
                 "</html>"
             );
             break;
@@ -412,6 +415,7 @@ function printCreation(layoutSetting, products) {
                     "<body>"+
                         productsStr+
                     "</body>"+
+                    "<script>print();</script>"+
                 "</html>"
             );
             break;
