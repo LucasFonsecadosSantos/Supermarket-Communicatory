@@ -109,6 +109,7 @@ function printCreation(layoutSetting, products) {
                                 "margin-bottom: 5%;"+
                             "}"+
                             "h2 {"+
+                                "font-family:Arial, sans-serif;"+
                                 "margin-top:-9%;"+
                                 "font-size:90px;"+
                                 "min-height:324px !important;"+
@@ -116,6 +117,7 @@ function printCreation(layoutSetting, products) {
                                 "overflow:hidden;"+
                             "}"+
                             "h4 {"+
+                                "font-family:Arial, sans-serif;"+
                                 "font-size:100px;"+
                                 "padding-left: 30%"+
                                 "padding-right: 30%"+
@@ -124,21 +126,24 @@ function printCreation(layoutSetting, products) {
                                 "text-transform: uppercase;"+
                             "}"+
                             "h4:after {"+
-                                "content:\"◼◼\";"+
+                                "font-family:Arial, sans-serif;"+
+                                "content:\"\\25AE\\25AE\\25AE\\25AE\";"+
                                 "background:#000;"+
                                 
-                                "letter-spacing: -10px;"+
+                                "letter-spacing: -20px;"+
                             "}"+
                             "h4:before {"+
-                                "content:\"◼◼\";"+
+                                "font-family:Arial, sans-serif;"+
+                                "content:\"\\25AE\\25AE\\25AE\\25AE\";"+
                                 "background:#000;"+
                                 
-                                "letter-spacing: -10px;"+
+                                "letter-spacing: -20px;"+
                             "}"+
                             "b {"+
                                 "margin: 0px 1cm 0px 1cm;"+
                             "}"+
                             "h3 {"+
+                                "font-family:Arial, sans-serif;"+
                                 "font-size:50px;"+
                                 "margin-top:2.5%;"+
                                 "margin-bottom:20%;"+
@@ -147,6 +152,7 @@ function printCreation(layoutSetting, products) {
                                 "overflow:hidden;"+
                             "}"+
                             "h1 {"+
+                                "font-family:Arial, sans-serif;"+
                                 "overflow: hidden;"+
                                 "font-size:230px;"+
                                 "display:inline-block;"+
@@ -158,6 +164,7 @@ function printCreation(layoutSetting, products) {
                                 "color:#F00;"+
                             "}"+
                             "h1:before {"+
+                                "font-family:Arial, sans-serif;"+
                                 "content: \" R$\";"+
                                 "font-size: 60px;"+
                             "}"+
@@ -165,7 +172,7 @@ function printCreation(layoutSetting, products) {
                                 "width: 21cm;"+
                             "}"+
                             ".page {"+
-                                "height: 29.7cm; "+
+                                "height: 27cm; "+
                             "}"+
                             "@media print {"+
                                 "body {"+
